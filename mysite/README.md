@@ -11,7 +11,7 @@ Antes de começar, certifique-se de que possui o seguinte:
 - Computador Linux ou Windows
 - Python 3.8 ou superior
 - pip (gestor de pacotes do Python)
-- Django (versão compatível com o projeto)
+- Django 5.1.3
 
 ---
 
@@ -22,8 +22,8 @@ Siga os passos abaixo para configurar a aplicação:
 ### 1. Clone o Repositório
 Faça o clone deste repositório para o seu ambiente local:
 ```bash
-git clone https://github.com/usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/JoaoAlves-a2020141847/Lab_7_Django.git
+cd Lab_7_Django
 ```
 
 ### 2. Crie e Ative um Ambiente Virtual
