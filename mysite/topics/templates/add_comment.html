@@ -14,20 +14,17 @@
 <body class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <!-- Header -->
             <header class="mb-4">
                 <button onclick="window.location.href='{% url 'topic_detail' topic.id %}'" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Return to Topic
                 </button>
             </header>
 
-            <!-- Card for Form -->
             <div class="card">
                 <div class="card-header text-center bg-primary text-white">
                     <h1 class="h5 mb-0">Add Comment</h1>
                 </div>
                 <div class="card-body">
-                    <!-- Form -->
                     <form method="POST">
                         {% csrf_token %}
                         {% crispy form %}
