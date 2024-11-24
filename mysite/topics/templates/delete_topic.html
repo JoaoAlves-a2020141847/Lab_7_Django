@@ -1,15 +1,43 @@
 <!-- html para a página de eliminação de tópico -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Delete topic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Topic</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body>
-    <h1>Delete topic?</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <button type="submit" name="cancel" value="false">Cancel</button>
-        <button type="submit" name="delete" value="true">Delete</button>
-    </form>
+<body class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Card -->
+            <div class="card">
+                <div class="card-header text-center bg-danger text-white">
+                    <h1 class="h5 mb-0">Delete Topic</h1>
+                </div>
+                <div class="card-body text-center">
+                    <p class="mb-4">Are you sure you want to delete this topic? This action cannot be undone.</p>
+                    <!-- Form -->
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" name="cancel" value="false" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                            <button type="submit" name="delete" value="true" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html
