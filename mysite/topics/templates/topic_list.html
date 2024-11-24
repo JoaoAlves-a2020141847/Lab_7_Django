@@ -1,0 +1,34 @@
+<!-- html para a página inicial (índice), contendo a lista de todos os tópicos -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Topics</title>
+</head>
+<header>
+    <div id="actions">
+        <button onclick="window.location.href='{% url 'new_topic' %}'">New topic</button>
+    </div>
+</header>
+<body>
+    <!-- secção para mostrar mensagens (alert js) -->
+    {% if messages %}
+        <script type="text/javascript">
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        </script>
+    {% endif %}
+
+    <h1>Topics</h1>
+    <div id="topic_list">
+        <!-- secção para listar tópicos, com o hyperlink para o mesmo -->
+        <ul>
+        {% for topic in topics %}
+            <li>
+                <a href="{% url 'topic_detail' topic.id %}">{{ topic.title }}</a> by {{ topic.author.username }}
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

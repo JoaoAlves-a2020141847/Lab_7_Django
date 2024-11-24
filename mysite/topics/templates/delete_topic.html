@@ -1,0 +1,15 @@
+<!-- html para a página de eliminação de tópico -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete topic</title>
+</head>
+<body>
+    <h1>Delete topic?</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" name="cancel" value="false">Cancel</button>
+        <button type="submit" name="delete" value="true">Delete</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!-- html para a página de edição de tópico -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit topic</title>
+</head>
+<header>
+    <button onclick="window.location.href='{% url 'topic_detail' topic.id %}'">Return to topic</button>
+</header>
+<body>
+    <h1>Edit topic</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

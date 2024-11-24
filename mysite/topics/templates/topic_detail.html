@@ -1,0 +1,35 @@
+<!-- html para a página de detalhes de tópico -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ topic.title }}</title>
+</head>
+<header>
+    <button onclick="window.location.href='{% url 'index' %}'">Topic List</button>
+    <button onclick="window.location.href='{% url 'edit_topic' topic.id %}'">Edit topic</button>
+    <button onclick="window.location.href='{% url 'delete_topic' topic.id %}'">Delete topic</button>
+</header>
+<body>
+    <!-- secção para mostrar mensagens (alert js) -->
+    {% if messages %}
+        <script type="text/javascript">
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        </script>
+    {% endif %}
+
+    <h1>{{ topic.title }}</h1>
+    <p>{{ topic.description }}</p>
+    <p>Created by {{ topic.author.username }} on {{ topic.created_at }}</p>
+
+    <h2>Comments</h2>
+    <button onclick="window.location.href='{% url 'add_comment' topic.id %}'">Add new comment</button>
+    <!-- listagem de comentários -->
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.text }} - {{ comment.author.username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
