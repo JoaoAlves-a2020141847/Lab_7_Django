@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-#URLs para as diferentes páginas
+# URLs para as diferentes páginas
 urlpatterns = [
     path('', views.index, name='index'),
     path('topic/<int:topic_id>/', views.topic_detail, name='topic_detail'),
